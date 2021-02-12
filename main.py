@@ -15,7 +15,9 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    textgen = textgenrnn("model_weights.hdf5")
+    textgen = textgenrnn(weights_path='model_weights.hdf5',
+                       vocab_path='model_vocab.json',
+                       config_path='model.json')
     lyrics = textgen.generate()
     return "\n".join(lyrics)
 
