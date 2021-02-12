@@ -11,9 +11,9 @@
 </head>
 <body>
 <h2>Lyrics Generator</h2>
-<button class="button" id="myButton" type="button">generate</button>
+<button class="button" id="myButton" type="button">generuj</button>
 <div class="loader" style="display:none;"></div>
-<div id="textlist" style="list-style: none;"></div>
+<div id="textlist"></div>
 <script>
     $('#myButton').click(function() {
         $("div.loader").show();
@@ -25,7 +25,7 @@
                 //console.log(response)
                 var data = response;
                 
-                $("#textlist").html(list_html);
+                $("#textlist").html(data);
             }
     });
     });
