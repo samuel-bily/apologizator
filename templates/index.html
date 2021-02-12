@@ -13,7 +13,7 @@
 <h2>Lyrics Generator</h2>
 <button class="button" id="myButton" type="button">generate</button>
 <div class="loader" style="display:none;"></div>
-<div id="textlist" style="list-style: none;"></div>
+<div id="text" style="list-style: none;"></div>
 <script>
     $('#myButton').click(function() {
         $("div.loader").show();
@@ -22,16 +22,11 @@
             url: "{{ url_for('generate')}}",
             dataType:"html",
             success: function(response){
-                //console.log(response)
+                console.log(response)
                 var data = response.split("\n");
-                //console.log(data)
-                var list_html = "<ul style='list-style: none;'>";
-                for( var i=0; i <data.length; i++) {
-                   list_html += "<li>" + data[i] + "</li>";
-                }
-                list_html += "</ul>"
+                console.log(data) 
                 $("div.loader").hide();
-                $("#textlist").html(list_html);
+                $("#text").html(data);
             }
     });
     });
