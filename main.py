@@ -1,9 +1,19 @@
 from flask import Flask
+from flask_cors import CORS, cross_origin
 import os
 from flask import render_template, send_from_directory
 from textgenrnn import textgenrnn
 
+
+
+
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+@cross_origin()
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 @app.route('/favicon.ico') 
 def favicon(): 
