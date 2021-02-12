@@ -16,7 +16,7 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     textgen = textgenrnn("model_weights.hdf5")
-    lyrics = textgen.generate(n=20, return_as_list=True)
+    lyrics = textgen.generate()
     return "\n".join(lyrics)
 
 if __name__ == "__main__":
