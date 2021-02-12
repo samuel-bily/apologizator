@@ -22,7 +22,7 @@ def generate():
                          vocab_path='apologies_noapostro_maxlength_vocab.json',
                          config_path='apologies_noapostro_maxlength_config.json')
     text = textgen.generate()
-    return "\n".join(text)
+    return text
 
 
 if __name__ == "__main__":
