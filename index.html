@@ -1,0 +1,34 @@
+<!-- index.html -->
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    </style>
+</head>
+<body>
+<h2>Lyrics Generator</h2>
+<button class="button" id="myButton" type="button">generate</button>
+<div class="loader" style="display:none;"></div>
+<div id="textlist" style="list-style: none;"></div>
+<script>
+    $('#myButton').click(function() {
+        $("div.loader").show();
+        $.ajax({
+            type:'POST',
+            url: "{{ url_for('generate')}}",
+            dataType:"html",
+            success: function(response){
+                //console.log(response)
+                var data = response.split("\n");
+                
+                $("div.loader").hide();
+                $("#textlist").html(list_html);
+            }
+    });
+    });
+</script>
+</body>
