@@ -16,8 +16,8 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
-    apology = textgen.generate(n=20)
-    return apology
+    apology = textgen.generate()
+    return join(apology)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, threaded=False)
