@@ -18,11 +18,9 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    textgen = textgenrnn(weights_path='apologies_noapostro_maxlength_weights.hdf5',
-                         vocab_path='apologies_noapostro_maxlength_vocab.json',
-                         config_path='apologies_noapostro_maxlength_config.json')
+    textgen = textgenrnn("apologies_noapostro_maxlength_weights.hdf5")
     text = textgen.generate()
-    return text
+    return join(text)
 
 
 if __name__ == "__main__":
