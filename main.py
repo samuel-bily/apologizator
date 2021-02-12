@@ -18,7 +18,7 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    textgen = textgenrnn("apologies_noapostro_maxlength_weights.hdf5")
+    textgen = textgenrnn("model_weights.hdf5")
     lyrics = textgen.generate(return_as_list=True)
     return "\n".join(lyrics)
 
