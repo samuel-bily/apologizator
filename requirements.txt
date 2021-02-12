@@ -2,7 +2,7 @@ absl-py==0.10.0
 astor==0.8.1
 Click==7.1.2
 Flask==1.1.2
-flask-cors==0.1.0
+Flask-Cors==3.0.7
 gast==0.3.3
 google-pasta==0.2.0
 grpcio==1.32.0
