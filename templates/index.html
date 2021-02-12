@@ -23,9 +23,14 @@
             success: function(response){
                 console.log(response)
                 var data = response.split("\n");
-                console.log(data) 
+                console.log(data)
+                var list_html = "<ul style='list-style: none;'>";
+                for( var i=0; i <data.length; i++) {
+                   list_html += "<li>" + data[i] + "</li>";
+                }
+                list_html += "</ul>"
                 $("div.loader").hide();
-                $("#text").html(data);
+                $("#textlist").html(list_html);
             }
     });
     });
