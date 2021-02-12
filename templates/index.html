@@ -17,7 +17,7 @@
     $('#myButton').click(function() {
         $("div.loader").show();
         $.ajax({
-            type:'POST',
+            type:'GET',
             url: "{{ url_for('generate')}}",
             dataType:"html",
             success: function(response){
