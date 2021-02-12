@@ -17,7 +17,7 @@ def index():
 def generate():
     textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
     apology = textgen.generate(n=1, return_as_list=True)
-    return apology
+    return "/n".join(apology)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, threaded=False)
