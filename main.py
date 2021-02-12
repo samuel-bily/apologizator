@@ -16,10 +16,10 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/generate', methods=['POST'])
+@app.route('/generate', methods=['GET'])
 def generate():
     textgen = textgenrnn("model_weights.hdf5")
-    lyrics = textgen.generate(return_as_list=True)
+    lyrics = textgen.generate()
     return "\n".join(lyrics)
 
 
