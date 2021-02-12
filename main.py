@@ -13,7 +13,7 @@ def favicon():
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['POST'])
+@app.route('/generate', methods=['GET'])
 def generate():
     textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
     apology = textgen.generate(n=1, return_as_list=True)
