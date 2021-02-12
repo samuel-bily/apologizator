@@ -16,7 +16,7 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
-    apology = textgen.generate()
+    apology = textgen.generate(n=1, return_as_list=True)
     return join(apology)
 
 if __name__ == "__main__":
