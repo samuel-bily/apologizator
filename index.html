@@ -11,18 +11,18 @@
 </head>
 <body>
 <h2>Apology</h2>
-<button class="button" id="myButton" type="button">generate</button>
+<button class="button" id="myButton" type="button">generuj</button>
 <div class="loader" style="display:none;"></div>
 <div id="text"></div>
 <script>
     $('#myButton').click(function() {
         $("div.loader").show();
         $.ajax({
-            type:'POST',
-            url: "{{ url_for('generate')}}",
-            dataType:"html",
+            type:'GET',
+            url: '/generate',
+            dataType:"json",
             success: function(response){
-                console.log(response)
+                //console.log(response)
                 var data = response;
                 $("#text").html(data);
             }
