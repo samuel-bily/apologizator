@@ -25,7 +25,7 @@ def index():
 
 @app.route('/generate', methods=['GET'])
 def generate():
-    textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
+    textgen = textgenrnn("model_weights.hdf5")
     apology = textgen.generate(n=1, return_as_list=True)
     return "/n".join(apology)
 
