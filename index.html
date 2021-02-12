@@ -23,9 +23,8 @@
             dataType:"html",
             success: function(response){
                 //console.log(response)
-                var data = response.split("\n");
+                var data = response;
                 
-                $("div.loader").hide();
                 $("#textlist").html(list_html);
             }
     });
