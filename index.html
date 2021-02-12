@@ -10,22 +10,21 @@
     </style>
 </head>
 <body>
-<h2>Lyrics Generator</h2>
-<button class="button" id="myButton" type="button">generuj</button>
+<h2>Apology</h2>
+<button class="button" id="myButton" type="button">generate</button>
 <div class="loader" style="display:none;"></div>
-<div id="textlist"></div>
+<div id="text"></div>
 <script>
     $('#myButton').click(function() {
         $("div.loader").show();
         $.ajax({
-            type:'GET',
+            type:'POST',
             url: "{{ url_for('generate')}}",
             dataType:"html",
             success: function(response){
-                //console.log(response)
+                console.log(response)
                 var data = response;
-                
-                $("#textlist").html(data);
+                $("#text").html(data);
             }
     });
     });
