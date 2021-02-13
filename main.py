@@ -4,20 +4,18 @@ import boto3
 import os
 from textgenrnn import textgenrnn
 
-
 app = Flask(__name__, static_folder='hello-react', static_url_path='')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @cross_origin()
 def helloWorld():
-  return "Hello, cross-origin-world!"
+    return "Hello, cross-origin-world!"
 
 @app.route('/')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
-    
-  
+   
 @app.route('/favicon.ico') 
 def favicon(): 
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
