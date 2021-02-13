@@ -17,7 +17,7 @@ def helloWorld():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
   
 @app.route('/favicon.ico') 
 def favicon(): 
