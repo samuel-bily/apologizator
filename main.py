@@ -15,6 +15,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def helloWorld():
   return "Hello, cross-origin-world!"
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+  
 @app.route('/favicon.ico') 
 def favicon(): 
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
