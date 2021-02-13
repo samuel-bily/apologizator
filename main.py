@@ -1,13 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template, send_from_directory, request, jsonify, make_response
 from flask_cors import CORS, cross_origin
+import boto3
 import os
-from flask import render_template, send_from_directory
 from textgenrnn import textgenrnn
 
 
-
-app = Flask(__name__ 
-    ,static_folder='client/build',static_url_path='')
+app = Flask(__name__, static_folder='client/build', static_url_path='')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -18,6 +16,7 @@ def helloWorld():
 @app.route('/')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
+    
   
 @app.route('/favicon.ico') 
 def favicon(): 
@@ -29,5 +28,5 @@ def generate():
     apology = textgen.generate(n=1, return_as_list=True)
     return "/n".join(apology)
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, threaded=False)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
