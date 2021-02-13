@@ -19,10 +19,6 @@ def helloWorld():
 def favicon(): 
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/generate', methods=['GET'])
 def generate():
     textgen = textgenrnn("textgenrnn_weights_4epochs.hdf5")
