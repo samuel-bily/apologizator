@@ -27,8 +27,11 @@ def generate():
 
 @app.route('/params', methods=['POST'])
 def parameters():
-    text_input = request.form["data"]
-    return jsonify({'message': 'Data received sucessfully!'}), 200
+    default_name = '0'
+    font = request.form.get('font', font)
+    bgColor = request.form.get('font', bgcolor)
+    txtColor = request.form.get('font',txtcolor)
+    return jsonify({'message': 'Data received sucessfully!'}+ bgcolor + font + txtColor), 200
 
 
 
