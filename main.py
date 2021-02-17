@@ -27,7 +27,7 @@ def generate():
 
 @app.route('/params', methods=['POST'])
 def parameters():
-    text_input = request.form["dataForm"]
+    text_input = request.form["data"]
     return jsonify({'message': 'Data received sucessfully!'}), 200
 
 
