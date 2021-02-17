@@ -25,5 +25,12 @@ def generate():
     apology = textgen.generate(n=1, return_as_list=True)
     return "/n".join(apology)
 
+@app.route('/params', methods=['POST'])
+def parameters():
+    text_input = request.form["dataForm"]
+    return jsonify({'message': 'Data received sucessfully!'}), 200
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000, threaded=False)
