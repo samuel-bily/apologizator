@@ -3,7 +3,6 @@ astor==0.8.1
 Click==7.1.2
 Flask==1.1.2
 Flask-Cors==3.0.7
-gast==0.3.3
 google-pasta==0.2.0
 grpcio==1.32.0
 gunicorn==20.0.4
